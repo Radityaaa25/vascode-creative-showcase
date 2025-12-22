@@ -15,7 +15,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="section-padding bg-snow" ref={ref}>
+    <section id="about" className="section-padding bg-void/95" ref={ref}>
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Content */}
@@ -28,7 +28,7 @@ const About = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6 }}
-              className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-medium text-sm mb-4"
+              className="inline-block px-4 py-1.5 rounded-full bg-primary/20 text-primary font-medium text-sm mb-4"
             >
               {t('about.subtitle')}
             </motion.span>
@@ -37,7 +37,7 @@ const About = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-void mb-6 leading-tight"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold text-snow mb-6 leading-tight"
             >
               {t('about.title')}
             </motion.h2>
@@ -46,7 +46,7 @@ const About = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-muted-foreground text-lg leading-relaxed mb-8"
+              className="text-snow/70 text-lg leading-relaxed mb-8"
             >
               {t('about.description')}
             </motion.p>
@@ -64,12 +64,12 @@ const About = () => {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={isInView ? { opacity: 1, scale: 1 } : {}}
                   transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                  className="text-center p-4 rounded-2xl bg-void/5"
+                  className="text-center p-4 rounded-2xl bg-snow/5 border border-snow/10"
                 >
                   <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-1">
                     {stat.value}
                   </div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
+                  <div className="text-sm text-snow/60">{stat.label}</div>
                 </motion.div>
               ))}
             </motion.div>
@@ -95,7 +95,7 @@ const About = () => {
                 transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
               />
               <motion.div
-                className="absolute inset-8 rounded-3xl bg-void flex items-center justify-center"
+                className="absolute inset-8 rounded-3xl bg-void flex items-center justify-center border border-snow/10"
                 animate={{ rotate: [0, 2, 0, -2, 0] }}
                 transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
               >
@@ -124,7 +124,7 @@ const About = () => {
                 <span className="text-2xl">💻</span>
               </motion.div>
               <motion.div
-                className="absolute top-1/2 -right-8 w-12 h-12 rounded-xl bg-snow shadow-lg flex items-center justify-center"
+                className="absolute top-1/2 -right-8 w-12 h-12 rounded-xl bg-void/80 border border-snow/20 shadow-lg flex items-center justify-center"
                 animate={{ x: [0, 5, 0] }}
                 transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut' }}
               >

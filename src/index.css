@@ -12,15 +12,15 @@
     --void: 240 3% 16%;
     --snow: 0 0% 96%;
     
-    /* Semantic tokens */
-    --background: 0 0% 96%;
-    --foreground: 240 3% 16%;
+    /* Semantic tokens - Dark Theme as default */
+    --background: 240 3% 16%;
+    --foreground: 0 0% 96%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 240 3% 16%;
+    --card: 240 3% 20%;
+    --card-foreground: 0 0% 96%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 3% 16%;
+    --popover: 240 3% 20%;
+    --popover-foreground: 0 0% 96%;
 
     --primary: 257 65% 57%;
     --primary-foreground: 0 0% 100%;
@@ -28,8 +28,8 @@
     --secondary: 77 100% 50%;
     --secondary-foreground: 240 3% 16%;
 
-    --muted: 240 5% 90%;
-    --muted-foreground: 240 3% 40%;
+    --muted: 240 3% 25%;
+    --muted-foreground: 240 3% 60%;
 
     --accent: 77 100% 50%;
     --accent-foreground: 240 3% 16%;
@@ -37,15 +37,15 @@
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 240 5% 85%;
-    --input: 240 5% 85%;
+    --border: 240 3% 25%;
+    --input: 240 3% 25%;
     --ring: 257 65% 57%;
 
     --radius: 0.75rem;
 
     /* Glass effect */
-    --glass-bg: 0 0% 100% / 0.7;
-    --glass-border: 0 0% 100% / 0.3;
+    --glass-bg: 240 3% 16% / 0.7;
+    --glass-border: 0 0% 100% / 0.1;
     
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(257 65% 57%), hsl(257 65% 45%));

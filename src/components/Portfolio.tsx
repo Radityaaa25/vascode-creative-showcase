@@ -94,7 +94,7 @@ const Portfolio = () => {
       : projects.filter((p) => p.category === activeFilter);
 
   return (
-    <section id="portfolio" className="section-padding bg-snow" ref={ref}>
+    <section id="portfolio" className="section-padding bg-void" ref={ref}>
       <div className="container-custom">
         {/* Header */}
         <div className="text-center mb-12">
@@ -102,7 +102,7 @@ const Portfolio = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-medium text-sm mb-4"
+            className="inline-block px-4 py-1.5 rounded-full bg-primary/20 text-primary font-medium text-sm mb-4"
           >
             {t('portfolio.subtitle')}
           </motion.span>
@@ -111,7 +111,7 @@ const Portfolio = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-void mb-4"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-snow mb-4"
           >
             {t('portfolio.title')}
           </motion.h2>
@@ -120,7 +120,7 @@ const Portfolio = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-muted-foreground text-lg max-w-2xl mx-auto"
+            className="text-snow/70 text-lg max-w-2xl mx-auto"
           >
             {t('portfolio.description')}
           </motion.p>
@@ -140,7 +140,7 @@ const Portfolio = () => {
               className={`px-5 py-2.5 rounded-full font-medium text-sm transition-all duration-300 ${
                 activeFilter === filter.key
                   ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/30'
-                  : 'bg-void/5 text-void hover:bg-void/10'
+                  : 'bg-snow/10 text-snow hover:bg-snow/20'
               }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -161,8 +161,7 @@ const Portfolio = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="group relative overflow-hidden rounded-2xl cursor-pointer"
-                onClick={() => setSelectedProject(project)}
+                className="group relative overflow-hidden rounded-2xl bg-snow/5 border border-snow/10"
               >
                 <div className="aspect-[4/3] overflow-hidden">
                   <motion.img
@@ -172,21 +171,30 @@ const Portfolio = () => {
                   />
                 </div>
 
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-void via-void/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                  <h3 className="text-xl font-bold text-snow mb-2">
-                    {project.title}
-                  </h3>
-                  <p className="text-snow/70 text-sm line-clamp-2">
-                    {project.description}
-                  </p>
-                </div>
-
                 {/* Category Badge */}
                 <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 rounded-full bg-snow/90 text-void text-xs font-medium capitalize">
+                  <span className="px-3 py-1 rounded-full bg-void/80 backdrop-blur-sm text-snow text-xs font-medium capitalize">
                     {project.category === 'photo' ? 'Photo / Video' : project.category}
                   </span>
+                </div>
+
+                {/* Content */}
+                <div className="p-5">
+                  <h3 className="text-lg font-bold text-snow mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-snow/60 text-sm line-clamp-2 mb-4">
+                    {project.description}
+                  </p>
+                  <motion.button
+                    onClick={() => setSelectedProject(project)}
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-opacity"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {t('portfolio.view')}
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </motion.button>
                 </div>
               </motion.div>
             ))}
@@ -209,7 +217,7 @@ const Portfolio = () => {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="relative w-full max-w-2xl bg-snow rounded-3xl overflow-hidden shadow-2xl"
+              className="relative w-full max-w-2xl bg-void border border-snow/10 rounded-3xl overflow-hidden shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
@@ -233,17 +241,17 @@ const Portfolio = () => {
 
               {/* Content */}
               <div className="p-6 md:p-8">
-                <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium capitalize mb-4">
+                <span className="inline-block px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-medium capitalize mb-4">
                   {selectedProject.category === 'photo'
                     ? 'Photo / Video'
                     : selectedProject.category}
                 </span>
 
-                <h3 className="text-2xl md:text-3xl font-bold text-void mb-4">
+                <h3 className="text-2xl md:text-3xl font-bold text-snow mb-4">
                   {selectedProject.title}
                 </h3>
 
-                <p className="text-muted-foreground leading-relaxed mb-6">
+                <p className="text-snow/70 leading-relaxed mb-6">
                   {selectedProject.description}
                 </p>
 
