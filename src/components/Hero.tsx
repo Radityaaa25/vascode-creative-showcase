@@ -3,13 +3,17 @@ import { ArrowRight, Play } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Hero = () => {
-  const { t } = useLanguage();
+  // AMBIL VARIABEL language DI SINI
+  const { t, language } = useLanguage();
 
   const openWhatsApp = () => {
-    const message = encodeURIComponent(
-      "Hello Vascode Creative, I'm interested in starting a project with you. Can we discuss?"
-    );
-    window.open(`https://wa.me/6281234567890?text=${message}`, '_blank');
+    // TENTUKAN PESAN BERDASARKAN BAHASA
+    const messageText = language === 'en' 
+      ? "Hello Vascode Creative, I'm interested in starting a project with you. Can we discuss?"
+      : "Halo Vascode Creative, saya tertarik untuk memulai proyek dengan Anda. Bisa kita diskusikan?";
+
+    const message = encodeURIComponent(messageText);
+    window.open(`https://wa.me/62881011441173?text=${message}`, '_blank');
   };
 
   const scrollToPortfolio = () => {

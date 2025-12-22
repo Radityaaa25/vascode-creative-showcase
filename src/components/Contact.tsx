@@ -129,10 +129,10 @@ const Contact = () => {
           >
             <p className="text-snow/40 text-sm mb-2">Or email us directly at</p>
             <a
-              href="mailto:hello@vascodecreative.com"
+              href="mailto:vascodecreative@gmail.com"
               className="text-snow hover:text-volt transition-colors font-medium"
             >
-              hello@vascodecreative.com
+              vascodecreative@gmail.com
             </a>
           </motion.div>
         </div>

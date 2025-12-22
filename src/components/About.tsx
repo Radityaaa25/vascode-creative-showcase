@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import logoIcon from '@/assets/logo-icon.png';
 
 const About = () => {
   const { t } = useLanguage();
@@ -99,13 +100,22 @@ const About = () => {
                 animate={{ rotate: [0, 2, 0, -2, 0] }}
                 transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
               >
-                <motion.span
-                  className="text-6xl md:text-8xl font-bold text-gradient"
+                
+                {/* --- BAGIAN INI YANG DIGANTI --- */}
+                {/* Menampilkan Gambar Logo Ikon */}
+                <motion.div
+                  className="w-2/3 h-2/3 flex items-center justify-center"
                   animate={{ scale: [1, 1.05, 1] }}
                   transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
                 >
-                  VC
-                </motion.span>
+                    <img 
+                        src={logoIcon} 
+                        alt="Vascode Logo" 
+                        className="w-full h-full object-contain drop-shadow-2xl"
+                    />
+                </motion.div>
+                {/* --- SELESAI PENGGANTIAN --- */}
+
               </motion.div>
 
               {/* Floating Elements */}
