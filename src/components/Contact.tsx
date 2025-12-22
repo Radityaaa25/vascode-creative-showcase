@@ -15,7 +15,7 @@ const Contact = () => {
         ? "Hello Vascode Creative, I'm interested in discussing a project. Can we chat?"
         : 'Halo Vascode Creative, saya tertarik untuk mendiskusikan sebuah proyek. Bisakah kita mengobrol?';
     window.open(
-      `https://wa.me/6281234567890?text=${encodeURIComponent(message)}`,
+      `https://wa.me/62881011441173?text=${encodeURIComponent(message)}`,
       '_blank'
     );
   };
@@ -30,13 +30,13 @@ const Contact = () => {
     {
       icon: Instagram,
       label: t('contact.instagram'),
-      action: () => window.open('https://instagram.com/vascodecreative', '_blank'),
+      action: () => window.open('https://www.instagram.com/vascode.creative?igsh=MWs2Z3c4d2gycWU3dA==', '_blank'),
       primary: false,
     },
     {
       icon: Mail,
       label: t('contact.email'),
-      action: () => window.open('mailto:hello@vascodecreative.com', '_blank'),
+      action: () => window.open('mailto:vascodecreative@gmail.com', '_blank'),
       primary: false,
     },
   ];

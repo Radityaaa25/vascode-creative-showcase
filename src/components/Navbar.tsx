@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import logoIcon from '@/assets/logo-icon.png';
+import logoFull from '@/assets/logo-full.png';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -50,7 +51,7 @@ const Navbar = () => {
         }`}
       >
         <div className="flex items-center justify-between">
-          {/* Logo */}
+        {/* Logo */}
           <motion.a
             href="#home"
             onClick={(e) => {
@@ -68,9 +69,16 @@ const Navbar = () => {
               whileHover={{ rotate: 10 }}
               transition={{ duration: 0.3 }}
             />
-            <span className="font-bold text-lg md:text-xl text-snow tracking-tight">
-              Vas<span className="text-volt">Code</span>
-            </span>
+            
+            {/* Bagian Teks Baru */}
+            <div className="flex flex-col items-start leading-none">
+              <span className="font-bold text-lg md:text-xl text-snow tracking-tight">
+                Vas<span className="text-volt">Code</span>
+              </span>
+              <span className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-snow/60 font-medium ml-0.5">
+                Creative
+              </span>
+            </div>
           </motion.a>
 
           {/* Desktop Navigation */}

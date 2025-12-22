@@ -9,17 +9,17 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: Instagram,
-      href: 'https://instagram.com/vascodecreative',
+      href: 'https://www.instagram.com/vascode.creative?igsh=MWs2Z3c4d2gycWU3dA==',
       label: 'Instagram',
     },
     {
       icon: MessageCircle,
-      href: 'https://wa.me/6281234567890',
+      href: 'https://wa.me/62881011441173',
       label: 'WhatsApp',
     },
     {
       icon: Mail,
-      href: 'mailto:hello@vascodecreative.com',
+      href: 'mailto:vascodecreative@gmail.com',
       label: 'Email',
     },
   ];
@@ -36,7 +36,7 @@ const Footer = () => {
             transition={{ duration: 0.6 }}
             className="flex flex-col items-center md:items-start gap-4"
           >
-            <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3">
               <motion.img
                 src={logoIcon}
                 alt="Vascode Creative"
@@ -44,9 +44,16 @@ const Footer = () => {
                 whileHover={{ rotate: 10 }}
                 transition={{ duration: 0.3 }}
               />
-              <span className="font-bold text-xl text-snow">
-                Vas<span className="text-volt">Code</span> Creative
-              </span>
+              
+              {/* Bagian Teks Baru */}
+              <div className="flex flex-col items-start leading-none">
+                <span className="font-bold text-xl text-snow tracking-tight">
+                  Vas<span className="text-volt">Code</span>
+                </span>
+                <span className="text-xs uppercase tracking-[0.2em] text-snow/60 font-medium ml-0.5 mt-0.5">
+                  Creative
+                </span>
+              </div>
             </div>
             <p className="text-snow/60 text-sm max-w-xs text-center md:text-left">
               {t('footer.tagline')}
