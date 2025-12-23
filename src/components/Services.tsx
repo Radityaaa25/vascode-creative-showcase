@@ -60,7 +60,7 @@ const Services = () => {
   const openWhatsApp = (message: string) => {
     // encodeURIComponent akan memastikan karakter enter (\n) terbaca dengan benar di URL WhatsApp
     window.open(
-      `https://wa.me/62881011441173?text=${encodeURIComponent(message)}`,
+      `https://wa.me/6281412234070?text=${encodeURIComponent(message)}`,
       '_blank'
     );
   };

@@ -15,7 +15,7 @@ const Contact = () => {
         ? "Hello Vascode Creative, I'm interested in discussing a project. Can we chat?"
         : 'Halo Vascode Creative, saya tertarik untuk mendiskusikan sebuah proyek. Bisakah kita mengobrol?';
     window.open(
-      `https://wa.me/62881011441173?text=${encodeURIComponent(message)}`,
+      `https://wa.me/6281412234070?text=${encodeURIComponent(message)}`,
       '_blank'
     );
   };

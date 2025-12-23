@@ -3,17 +3,15 @@ import { ArrowRight, Play } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Hero = () => {
-  // AMBIL VARIABEL language DI SINI
   const { t, language } = useLanguage();
 
   const openWhatsApp = () => {
-    // TENTUKAN PESAN BERDASARKAN BAHASA
     const messageText = language === 'en' 
       ? "Hello Vascode Creative, I'm interested in starting a project with you. Can we discuss?"
       : "Halo Vascode Creative, saya tertarik untuk memulai proyek dengan Anda. Bisa kita diskusikan?";
 
     const message = encodeURIComponent(messageText);
-    window.open(`https://wa.me/62881011441173?text=${message}`, '_blank');
+    window.open(`https://wa.me/6281412234070?text=${message}`, '_blank');
   };
 
   const scrollToPortfolio = () => {
@@ -62,7 +60,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:50px_50px]" />
       </div>
 
-      <div className="container-custom relative z-10 text-center px-4">
+      <div className="container-custom relative z-10 text-center px-4 pt-28 md:pt-24">
         {/* Tagline */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -131,7 +129,7 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 0.6 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          className="mt-24 md:mt-6 flex justify-center relative z-20"
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}
@@ -146,6 +144,8 @@ const Hero = () => {
           </motion.div>
         </motion.div>
       </div>
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-void z-10 pointer-events-none" />
+      
     </section>
   );
 };
