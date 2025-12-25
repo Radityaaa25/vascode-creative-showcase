@@ -1,18 +1,18 @@
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { useLanguage } from '@/contexts/LanguageContext';
-import logoIcon from '@/assets/logo-icon.png';
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import logoIcon from "@/assets/logo-icon.png";
 
 const About = () => {
   const { t } = useLanguage();
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const stats = [
-    { value: t('about.stat1.value'), label: t('about.stat1.label') },
-    { value: t('about.stat2.value'), label: t('about.stat2.label') },
-    { value: t('about.stat3.value'), label: t('about.stat3.label') },
+    { value: t("about.stat1.value"), label: t("about.stat1.label") },
+    { value: t("about.stat2.value"), label: t("about.stat2.label") },
+    { value: t("about.stat3.value"), label: t("about.stat3.label") },
   ];
 
   return (
@@ -31,7 +31,7 @@ const About = () => {
               transition={{ duration: 0.6 }}
               className="inline-block px-4 py-1.5 rounded-full bg-primary/20 text-primary font-medium text-sm mb-4"
             >
-              {t('about.subtitle')}
+              {t("about.subtitle")}
             </motion.span>
 
             <motion.h2
@@ -40,7 +40,7 @@ const About = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-3xl md:text-4xl lg:text-5xl font-bold text-snow mb-6 leading-tight"
             >
-              {t('about.title')}
+              {t("about.title")}
             </motion.h2>
 
             <motion.p
@@ -49,7 +49,7 @@ const About = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-snow/70 text-lg leading-relaxed mb-8"
             >
-              {t('about.description')}
+              {t("about.description")}
             </motion.p>
 
             {/* Stats */}
@@ -88,57 +88,106 @@ const About = () => {
               <motion.div
                 className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/20 to-secondary/20"
                 animate={{ rotate: [0, 5, 0, -5, 0] }}
-                transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
+                transition={{
+                  duration: 20,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
               />
               <motion.div
                 className="absolute inset-4 rounded-3xl bg-gradient-to-br from-primary to-primary/80"
                 animate={{ rotate: [0, -3, 0, 3, 0] }}
-                transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
+                transition={{
+                  duration: 15,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
               />
               <motion.div
                 className="absolute inset-8 rounded-3xl bg-void flex items-center justify-center border border-snow/10"
                 animate={{ rotate: [0, 2, 0, -2, 0] }}
-                transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
+                transition={{
+                  duration: 10,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
               >
-                
                 {/* --- BAGIAN INI YANG DIGANTI --- */}
                 {/* Menampilkan Gambar Logo Ikon */}
                 <motion.div
-                  className="w-2/3 h-2/3 flex items-center justify-center"
-                  animate={{ scale: [1, 1.05, 1] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                  className="
+    w-1/2 h-1/2 
+    sm:w-3/5 sm:h-3/5 
+    md:w-2/3 md:h-2/3 
+    flex items-center justify-center
+  "
+                  animate={{ scale: [1, 1.03, 1] }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
                 >
-                    <img 
-                        src={logoIcon} 
-                        alt="Vascode Logo" 
-                        className="w-full h-full object-contain drop-shadow-2xl"
-                    />
+                  <img
+                    src={logoIcon}
+                    alt="Vascode Logo"
+                    className="
+    max-w-full max-h-full 
+    object-contain 
+    drop-shadow-xl
+  "
+                  />
                 </motion.div>
                 {/* --- SELESAI PENGGANTIAN --- */}
-
               </motion.div>
 
               {/* Floating Elements */}
               <motion.div
                 className="absolute -top-4 -right-4 w-16 h-16 rounded-2xl bg-secondary flex items-center justify-center shadow-lg"
                 animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
               >
                 <span className="text-2xl">🎨</span>
               </motion.div>
               <motion.div
                 className="absolute -bottom-4 -left-4 w-16 h-16 rounded-2xl bg-primary flex items-center justify-center shadow-lg"
                 animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
               >
                 <span className="text-2xl">💻</span>
               </motion.div>
               <motion.div
-                className="absolute top-1/2 -right-8 w-12 h-12 rounded-xl bg-void/80 border border-snow/20 shadow-lg flex items-center justify-center"
+                className="
+    absolute top-1/2 
+    right-2 
+    sm:-right-4 
+    md:-right-6 
+    lg:-right-8
+    w-10 h-10 
+    sm:w-11 sm:h-11 
+    md:w-12 md:h-12
+    rounded-xl 
+    bg-void/80 
+    border border-snow/20 
+    shadow-lg 
+    flex items-center justify-center
+  "
                 animate={{ x: [0, 5, 0] }}
-                transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut' }}
+                transition={{
+                  duration: 3.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
               >
-                <span className="text-xl">📸</span>
+                <span className="text-lg sm:text-xl">📸</span>
               </motion.div>
             </div>
           </motion.div>
